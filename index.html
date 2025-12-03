@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Formation Télévente - Nuvei</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0033A0;
+            --secondary-orange: #FF6B00;
+            --accent-green: #28A745;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #333;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #3a55a4, #3a55a4);
+            color: white;
+            padding: 40px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.1"/></svg>');
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            background-color: rgba(255, 107, 0, 0.9);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            border-left: 6px solid var(--primary-blue);
+            position: relative;
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content-box {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 107, 0, 0.1);
+            border-left: 4px solid var(--secondary-orange);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .script-box {
+            background-color: #f8f9fa;
+            border: 2px dashed #ccc;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .script-box::before {
+            content: "📞 Script";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background-color: white;
+            padding: 0 10px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .process-step {
+            background-color: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-blue);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-connector {
+            position: absolute;
+            height: 2px;
+            background-color: var(--primary-blue);
+            top: 50%;
+            left: 85px;
+            right: 85px;
+            z-index: 1;
+        }
+        
+        .checklist {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0 10px 40px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 25px;
+            height: 25px;
+            background-color: var(--accent-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .metrics-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .metric-box {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            width: 23%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--dark-gray);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+        }
+        
+        .glossary {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .glossary-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--secondary-orange);
+        }
+        
+        .term {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .metrics-container {
+                flex-direction: column;
+            }
+            
+            .metric-box {
+                width: 100%;
+            }
+            
+            .process-flow {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-connector {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary-orange);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .logo img {
+    height: 160px;
+    width: auto;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+           <img src="almotrust.png" alt="">
+        </div>
+        <h1>Guide de Formation Télévente</h1>
+        <div class="subtitle">Solutions de Paiement pour Commerçants</div>
+        <div class="tagline">Des taux compétitifs • Paiement en 24h • Machines dernière génération</div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-building"></i>
+            <span>Section 1: Connaissance de l'Entreprise</span>
+        </div>
+        
+        <div class="content-box">
+            <h3>Notre Positionnement</h3>
+            <table>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Détails</th>
+                </tr>
+                <tr>
+                    <td><strong>Origine</strong></td>
+                    <td>Société canadienne avec expansion européenne</td>
+                </tr>
+                <tr>
+                    <td><strong>Produit</strong></td>
+                    <td>Terminaux de paiement (TPE) de dernière génération en location</td>
+                </tr>
+                <tr>
+                    <td><strong>Avantage Clé</strong></td>
+                    <td>Taux Visa/Mastercard parmi les plus bas du marché<span class="badge">AVANTAGE MAJEUR</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Paiement</strong></td>
+                    <td><strong>Au commerçant dans 24h</strong> </td>
+                </tr>
+                <tr>
+                    <td><strong>Concurrents</strong></td>
+                    <td>Clover, Cluster (souvent plus chers avec frais cachés)</td>
+                </tr>
+            </table>
+            
+            <div class="highlight">
+                <h3>📊 Notre Mission</h3>
+                <p><strong>Aider les commerçants à augmenter leur chiffre d'affaires</strong> en réduisant leurs coûts de transaction grâce à nos solutions compétitives et transparentes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-bullseye"></i>
+            <span>Section 2: Stratégie de Prospection</span>
+        </div>
+        
+        <div class="content-box">
+            <h3>Ciblage Précis</h3>
+            
+            <div style="text-align: center; margin: 25px 0;">
+                <div style="display: inline-block; text-align: left;">
+                    <div class="checklist">
+                        <li>Cafés & Restaurants à Québec</li>
+                        <li>Commerces de détail</li>
+                        <li>Zones avec activité commerciale élevée</li>
+                        <li>Établissements avec forte activité de paiement par carte</li>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="process-flow">
+                <div class="process-step">1</div>
+                <div class="process-step">2</div>
+                <div class="process-step">3</div>
+                <div class="process-step">4</div>
+                <div class="process-connector"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; text-align: center;">
+                <div style="width: 22%;">
+                    <div class="badge">Recherche</div>
+                    <p>Google Maps</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Sélection</div>
+                    <p>Cibles qualifiées</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Contact</div>
+                    <p>Appel initial</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Suivi</div>
+                    <p>Email & rappel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-phone-alt"></i>
+            <span>Section 3: Premier Contact</span>
+        </div>
+        
+        <div class="script-box">
+            <strong>Salutation standard :</strong><br><br>
+            "Bonjour, je suis <strong>[Prénom]</strong> du <strong>service de paiement Nuvei</strong>. Puis-je parler au propriétaire ou au gérant s'il vous plaît?"
+        </div>
+        
+        <h3>Réponses aux Objections</h3>
+        <table>
+            <tr>
+                <th>Situation</th>
+                <th>Réponse Recommandée</th>
+                <th>Objectif</th>
+            </tr>
+            <tr>
+                <td><strong>"Il/Elle n'est pas là"</strong></td>
+                <td>"Pourriez-vous me donner son numéro de contact direct? C'est important."</td>
+                <td>Obtenir contact direct</td>
+            </tr>
+            <tr>
+                <td><strong>"Pourquoi voulez-vous lui parler?"</strong></td>
+                <td>"C'est <strong>confidentiel</strong>. Je ne peux divulguer ces informations qu'au propriétaire, c'est indiqué dans le dossier."</td>
+                <td>Créer urgence & confidentialité</td>
+            </tr>
+            <tr>
+                <td><strong>"De quoi s'agit-il?"</strong></td>
+                <td>"C'est concernant une <strong>opportunité exclusive</strong> pour son établissement."</td>
+                <td>Maintenir intérêt sans divulguer</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-handshake"></i>
+            <span>Section 4: Contact avec le Propriétaire</span>
+        </div>
+        
+        <div class="script-box">
+            <strong>Introduction structurée :</strong><br><br>
+            "Bonjour <strong>[Nom]</strong>, je m'appelle <strong>[Prénom]</strong> de <strong>Nuvei Solutions de Paiement</strong>. La raison de mon appel est que votre établissement est <strong>éligible à une réduction spéciale</strong> sur vos taux Visa/Mastercard."
+        </div>
+        
+        <h3>Points Clés à Aborder</h3>
+        <div class="glossary">
+            <div class="glossary-item">
+                <div class="term">🎯 Avantage Principal</div>
+                <p>"Nous avons <strong>les taux les plus bas du marché</strong>"</p>
+            </div>
+            <div class="glossary-item">
+                <div class="term">💰 Bénéfice Direct</div>
+                <p>"Vous allez <strong>augmenter votre chiffre d'affaires</strong> en réduisant vos coûts de transaction"</p>
+            </div>
+            <div class="glossary-item">
+                <div class="term">🔍 Différenciation</div>
+                <p>"Contrairement à certains fournisseurs, nous <strong>n'avons pas de frais cachés</strong>"</p>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <h3>❓ Questions Diagnostiques</h3>
+            <div class="checklist">
+                <li>"Quel est votre <strong>fournisseur actuel</strong> de terminaux de paiement?"</li>
+                <li>"Savez-vous <strong>exactement combien vous payez</strong> en frais sur chaque transaction?"</li>
+                <li>"Êtes-vous au courant des <strong>frais supplémentaires</strong> qui peuvent s'ajouter?"</li>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-box" style="background: linear-gradient(135deg, #f8fff8, #f0f8ff);">
+    <div style="text-align: center; margin-bottom: 25px;">
+        <div style="display: inline-block; background-color: var(--primary-blue); color: white; padding: 15px 30px; border-radius: var(--border-radius); font-size: 1.2rem;">
+            <i class="fas fa-envelope"></i> OBJECTIF PRINCIPAL : OBTENIR L'EMAIL
+        </div>
+    </div>
+    
+    <div class="highlight" style="background-color: rgba(0, 51, 160, 0.05);">
+        <h3 style="color: var(--primary-blue);"><i class="fas fa-phone-volume"></i> Phrase de Transition Clé</h3>
+        <div class="script-box" style="border: 2px solid var(--primary-blue); margin: 20px 0;">
+            <strong>Formulation recommandée :</strong><br><br>
+            "Très bien, pour que vous puissiez voir concrètement notre offre, <strong>je vais vous envoyer notre proposition exclusive par email</strong> avec tous les détails :"
+            
+            <div style="margin: 15px 0; padding-left: 20px;">
+                <div class="checklist" style="margin: 0;">
+                    <li>Nos <strong>taux compétitifs</strong> personnalisés</li>
+                    <li>Les <strong>spécifications</strong> de nos machines dernière génération</li>
+                    <li>La <strong>comparaison détaillée</strong> avec votre fournisseur actuel</li>
+                    <li>Les <strong>conditions exclusives</strong> pour votre établissement</li>
+                </div>
+            </div>
+            
+            "Je vous rappelle <strong>dans 1 heure / demain matin</strong> pour en discuter et répondre à toutes vos questions."
+        </div>
+    </div>
+    
+    <h3><i class="fas fa-tasks"></i> Techniques pour Obtenir l'Email</h3>
+    <table>
+        <tr>
+            <th style="width: 30%;">Technique</th>
+            <th style="width: 40%;">Phrase Type</th>
+            <th style="width: 30%;">Avantage</th>
+        </tr>
+        <tr>
+            <td><strong>Alternative Double</strong></td>
+            <td>"Préférez-vous que je l'envoie à votre email professionnel ou personnel?"</td>
+            <td>Donne le choix, augmente le taux de réponse</td>
+        </tr>
+        <tr>
+            <td><strong>Confirmation Simple</strong></td>
+            <td>"Pourriez-vous me confirmer votre adresse email pour l'envoi?"</td>
+            <td>Implique le client dans le processus</td>
+        </tr>
+        <tr>
+            <td><strong>Valeur Ajoutée</strong></td>
+            <td>"Je vais y joindre une analyse gratuite de votre situation actuelle"</td>
+            <td>Crée de la valeur supplémentaire</td>
+        </tr>
+        <tr>
+            <td><strong>Urgence Positive</strong></td>
+            <td>"Cette offre est valable 48h, je vous l'envoie maintenant pour réserver vos avantages"</td>
+            <td>Crée un sentiment d'urgence</td>
+        </tr>
+    </table>
+    
+    <div style="display: flex; margin-top: 25px; gap: 20px;">
+        <div style="flex: 1; background-color: #e8f4ff; padding: 20px; border-radius: var(--border-radius);">
+            <h4 style="color: var(--primary-blue);"><i class="fas fa-check-circle"></i> À FAIRE</h4>
+            <div class="checklist">
+                <li>Confirmer la bonne orthographe de l'email</li>
+                <li>Spécifier l'heure approximative du rappel</li>
+                <li>Résumer brièvement ce qui sera envoyé</li>
+                <li>Remercier pour le temps accordé</li>
+            </div>
+        </div>
+        
+        <div style="flex: 1; background-color: #fff0f0; padding: 20px; border-radius: var(--border-radius);">
+            <h4 style="color: #dc3545;"><i class="fas fa-times-circle"></i> À ÉVITER</h4>
+            <div style="padding-left: 20px;">
+                <p style="margin: 8px 0;"><i class="fas fa-times" style="color: #dc3545;"></i> Demander l'email trop tôt dans la conversation</p>
+                <p style="margin: 8px 0;"><i class="fas fa-times" style="color: #dc3545;"></i> Ne pas préciser ce qu'on enverra</p>
+                <p style="margin: 8px 0;"><i class="fas fa-times" style="color: #dc3545;"></i> Oublier de fixer un moment pour le rappel</p>
+                <p style="margin: 8px 0;"><i class="fas fa-times" style="color: #dc3545;"></i> Envoyer sans confirmation du client</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="highlight" style="margin-top: 25px; background-color: #fff8e1;">
+        <h3><i class="fas fa-lightbulb"></i> Stratégie Post-Email</h3>
+        <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <div style="background-color: var(--secondary-orange); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                1
+            </div>
+            <div>
+                <strong>Envoyer l'email immédiatement</strong> après l'appel (dans les 5 minutes)
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <div style="background-color: var(--secondary-orange); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                2
+            </div>
+            <div>
+                <strong>Inclure un suivi automatique</strong> configuré pour 15 minutes après l'envoi
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+            <div style="background-color: var(--secondary-orange); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                3
+            </div>
+            <div>
+                <strong>Rappeler au moment convenu</strong> (exactitude = professionnalisme)
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-sync-alt"></i>
+            <span>Section 5: Suivi et Argumentaire</span>
+        </div>
+        
+        <div class="script-box">
+            <strong>Rappel après envoi d'email :</strong><br><br>
+            "Bonjour <strong>[Nom]</strong>, avez-vous pu consulter notre offre? Permettez-moi de vous expliquer les avantages..."
+        </div>
+        
+        <h3>Arguments Renforcés</h3>
+        <table>
+            <tr>
+                <th>Argument</th>
+                <th>Phrase Type</th>
+                <th>Impact</th>
+            </tr>
+            <tr>
+                <td><strong>Taux Négociables</strong></td>
+                <td>"En tant que votre représentant, je peux <strong>négocier pour vous</strong> des taux encore plus avantageux"</td>
+                <td>Crée relation privilégiée</td>
+            </tr>
+            <tr>
+                <td><strong>Preuve Concrète</strong></td>
+                <td>"Pourriez-vous nous envoyer une <strong>facture actuelle</strong>? Nous ferons une <strong>comparaison détaillée</strong>"</td>
+                <td>Démontre valeur tangible</td>
+            </tr>
+            <tr>
+                <td><strong>Matériel Premium</strong></td>
+                <td>"Nos <strong>machines de dernière génération</strong> à prix compétitif"</td>
+                <td>Avantage technologique</td>
+            </tr>
+        </table>
+        
+        <div class="highlight">
+            <h3>📋 Checklist de Suivi</h3>
+            <div class="checklist">
+                <li>Comparaison des coûts présentée</li>
+                <li>Économie annuelle calculée</li>
+                <li>Qualité du matériel soulignée</li>
+                <li>Service rapide mentionné (24h)</li>
+                <li>Transparence totale garantie</li>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-file-signature"></i>
+            <span>Section 6: Finalisation</span>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <div class="process-flow">
+                <div class="process-step"><i class="fas fa-handshake"></i></div>
+                <div class="process-step"><i class="fas fa-file-invoice"></i></div>
+                <div class="process-step"><i class="fas fa-envelope"></i></div>
+                <div class="process-step"><i class="fas fa-shipping-fast"></i></div>
+                <div class="process-connector"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; text-align: center; margin-top: 20px;">
+                <div style="width: 22%;">
+                    <div class="badge">Étape 1</div>
+                    <p>Accord Client</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Étape 2</div>
+                    <p>Documents Requis</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Étape 3</div>
+                    <p>Contrat Signé</p>
+                </div>
+                <div style="width: 22%;">
+                    <div class="badge">Étape 4</div>
+                    <p>Expédition 24h</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>Documents Requis</h3>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <div style="text-align: center; width: 30%;">
+                    <div style="background-color: var(--primary-blue); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <p><strong>Pièce d'identité</strong><br>ou permis de conduire</p>
+                </div>
+                <div style="text-align: center; width: 30%;">
+                    <div style="background-color: var(--primary-blue); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <p><strong>Spécimen de chèque</strong><br>pour vérification bancaire</p>
+                </div>
+                <div style="text-align: center; width: 30%;">
+                    <div style="background-color: var(--primary-blue); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <p><strong>Numéro de TPS</strong><br>Taxe sur les Produits et Services</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-shield-alt"></i>
+            <span>Section 7: Gestion des Objections</span>
+        </div>
+        
+        <h3>Réponses aux Objections Fréquentes</h3>
+        <table>
+            <tr>
+                <th>Objection</th>
+                <th>Réponse</th>
+                <th>Émotion</th>
+            </tr>
+            <tr>
+                <td><strong>"Je suis déjà sous contrat"</strong></td>
+                <td>"Notre comparaison vous montrera si vous pouvez <strong>économiser malgré votre contrat</strong>"</td>
+                <td>🤝 Compréhensif</td>
+            </tr>
+            <tr>
+                <td><strong>"Vos prix sont trop élevés"</strong></td>
+                <td>"Sur le <strong>long terme</strong>, avec nos taux réduits, vous <strong>économiserez plus</strong>"</td>
+                <td>📈 Vision long terme</td>
+            </tr>
+            <tr>
+                <td><strong>"Je n'ai pas le temps"</strong></td>
+                <td>"Je peux tout envoyer par <strong>email</strong> (5 minutes seulement)"</td>
+                <td>⏱️ Respectueux</td>
+            </tr>
+            <tr>
+                <td><strong>"Je veux réfléchir"</strong></td>
+                <td>"Cette offre est <strong>exclusive et limitée</strong>. Puis-je vous rappeler demain?"</td>
+                <td>⚡ Urgence positive</td>
+            </tr>
+        </table>
+    </div>
+    
+<div class="content-box">
+    <h3><i class="fas fa-glossary"></i> Glossaire des Termes Techniques</h3>
+    
+    <div class="glossary">
+        <div class="glossary-item">
+            <div class="term">TPE</div>
+            <p><strong>Terminal de Paiement Électronique</strong><br>Appareil physique utilisé pour les transactions par carte bancaire.</p>
+        </div>
+        <div class="glossary-item">
+            <div class="term">TPS</div>
+            <p><strong>Taxe sur les Produits et Services</strong><br>Numéro d'identification fiscale nécessaire pour les contrats commerciaux au Canada.</p>
+        </div>
+        <div class="glossary-item">
+            <div class="term">Frais Interchange</div>
+            <p>Frais payés par le commerçant à la banque émettrice de la carte pour chaque transaction.</p>
+        </div>
+        <div class="glossary-item">
+            <div class="term">Spécimen de Chèque</div>
+            <p>Chèque annulé ou copie de chèque utilisé pour vérifier les informations bancaires.</p>
+        </div>
+        <div class="glossary-item">
+            <div class="term">Taux Préférentiel</div>
+            <p>Taux spécial négocié pour un client spécifique, inférieur au taux standard.</p>
+        </div>
+        <div class="glossary-item">
+            <div class="term">Paiement en 24h</div>
+            <p>Avantage Nuvei : les fonds des transactions sont versés au commerçant dans les 24 heures.</p>
+        </div>
+    </div>
+    
+
+    
+    <h3 style="margin-top: 40px;"><i class="fas fa-calculator"></i> Calculateur d'Économies</h3>
+    
+    <div style="background-color: #f5f5f5; padding: 25px; border-radius: var(--border-radius); margin-top: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+                <strong>Formule de calcul :</strong>
+            </div>
+            <div style="background-color: white; padding: 10px 20px; border-radius: var(--border-radius); font-family: monospace;">
+                (Taux actuel - Taux Nuvei) × Volume mensuel × 12
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; text-align: center;">
+            <div style="background-color: white; padding: 15px; border-radius: var(--border-radius);">
+                <div style="font-size: 0.9rem; color: var(--dark-gray);">Taux Moyen Concurrent</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: #d32f2f;">2.5%</div>
+            </div>
+            <div style="background-color: white; padding: 15px; border-radius: var(--border-radius);">
+                <div style="font-size: 0.9rem; color: var(--dark-gray);">Taux Nuvei Standard</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-blue);">1.8%</div>
+            </div>
+            <div style="background-color: white; padding: 15px; border-radius: var(--border-radius);">
+                <div style="font-size: 0.9rem; color: var(--dark-gray);">Différence</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-green);">0.7%</div>
+            </div>
+            <div style="background-color: white; padding: 15px; border-radius: var(--border-radius);">
+                <div style="font-size: 0.9rem; color: var(--dark-gray);">Économie/10k$</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-green);">70$</div>
+            </div>
+        </div>
+    </div>
+    
+    <h3 style="margin-top: 40px;"><i class="fas fa-headset"></i> Scripts de Support</h3>
+    
+    <div style="margin-top: 20px;">
+        <div class="script-box" style="margin-bottom: 15px;">
+            <strong>Réponse à "Comment se passe l'installation?"</strong><br><br>
+            "L'installation est très simple et gratuite. Un technicien vient sur place, connecte le terminal en 15 minutes, et vous forme à son utilisation. Tout est opérationnel le jour même."
+        </div>
+        
+        <div class="script-box" style="margin-bottom: 15px;">
+            <strong>Réponse à "Et si j'ai un problème technique?"</strong><br><br>
+            "Notre support technique est disponible 24/7 par téléphone. En cas de panne, nous vous fournissons un terminal de remplacement dans les 24 heures, sans frais supplémentaires."
+        </div>
+        
+        <div class="script-box">
+            <strong>Réponse à "Puis-je essayer avant de signer?"</strong><br><br>
+            "Pour démarrer avec nos terminaux, nous avons besoin d'une signature pour l'installation et la configuration du système. Mais voici ce qui est important : il n'y a absolument aucun engagement de votre part.
+
+Le contrat que vous signez est uniquement pour mettre en place le service, mais vous pouvez résilier à tout moment, sans aucun frais de notre côté. De plus, si vous avez des frais de résiliation avec votre fournisseur actuel, nous nous en occupons et les remboursons.
+
+En réalité, vous pouvez considérer cela comme un essai : vous signez pour commencer, vous testez nos terminaux et nos taux pendant quelques semaines, et si vous n'êtes pas entièrement satisfait, vous nous le dites et nous arrêtons tout immédiatement. Vous ne payez que pour la période d'utilisation.
+
+C'est notre façon de vous montrer que nous avons confiance en la qualité de notre service et en la compétitivité de nos tarifs. Essayez-nous, et vous verrez rapidement la différence sur votre chiffre d'affaires"
+        </div>
+    </div>
+    
+
+</div>
+    
+    <div class="footer">
+        <h3>Document de Formation AlmoTrust</h3>
+        <p>Version 1.0 • Préparé pour l'équipe de télévente</p>
+    </div>
+    
+    <script>
+        // Simple animation for metric boxes on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const metricBoxes = document.querySelectorAll('.metric-box');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            metricBoxes.forEach(box => {
+                box.style.transform = 'translateY(20px)';
+                box.style.opacity = '0.5';
+                box.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                observer.observe(box);
+            });
+            
+            // Add click effect to process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach(step => {
+                step.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.boxShadow = '0 0 15px rgba(0, 51, 160, 0.5)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                        this.style.boxShadow = 'none';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
